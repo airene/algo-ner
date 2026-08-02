@@ -8,6 +8,9 @@ RaNER 是固定类型的通用中文命名实体识别模型，只返回：人�
 地名（`LOC`）和地缘政治实体（`GPE`）。它不是通用 UIE 模型，不能通过请求临时增加
 “药物”“产品”等标签。
 
+后续文档字段抽取的范围、NER 加工程解析路线、OCR 输入约定和当前待实现事项，统一记录在
+[文档字段抽取技术决策](docs/document-extraction-decisions.md)。
+
 ## 安装
 
 需要 Python 3.13 与 [uv](https://docs.astral.sh/uv/)。普通依赖经中科大镜像安装；Debian
@@ -94,3 +97,6 @@ uv sync --extra dev --locked
 uv run --extra dev --locked pytest
 uv run --extra dev --locked ruff check src scripts tests
 ```
+
+当前 `tests/test_school_notice_extraction.py` 是已提交的待实现规格，完整测试暂时有一个已知
+失败；原因和后续处理见[文档字段抽取技术决策](docs/document-extraction-decisions.md)。
